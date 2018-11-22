@@ -31,4 +31,6 @@ $ ./game_sample
 ## Update Log
 `DD-MM-YYYY` format
 
+23.11.2018: Completed the C++ part of the game. It now has a `Map` which is connected to `Unit` which is then connected to `SimpleOps`. We want to connect our python package to the control the `Map` and `Unit` and is not connected to the utils `SimpleOps`. The original code is archieved in `complete_game` folder and is not to be touched.
+
 21.11.2018: Learned how to build and compile using cmake
