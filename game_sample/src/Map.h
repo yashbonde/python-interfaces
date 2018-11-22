@@ -8,18 +8,29 @@ This is the C++ header file for Maps. It has some attributes and some methods.
 #define GAME_MAP
 
 #include <stdio.h>
+#include <vector>
 
-class Map{
+#include "Unit.h"
+
+class Map {
 private:
 	int canvas[6][6];
 	int sizeX, sizeY;
+	int numUnits_teamA, numUnits_teamB;
+
+	std::vector<Unit> allUnits;
 
 public:
-	Map(int, int);
+	Map(int, int, int, int);
+
+	// units
+	void printUnitStats(void);
+	std::vector<Unit> getUnits(void);
+
 
 	// methods
 	void loadPositions(int, int*, int*, int);
-	void updatePositionOfUnit(int, int, int);
+	void updatePositionOfUnit(int, int);
 	void printMap(void);
 	
 };

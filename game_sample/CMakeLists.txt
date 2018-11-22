@@ -7,6 +7,10 @@ set(CMAKE_CXX_STANDARD 11)
 include_directories(src)
 
 add_executable(game_sample
+	src/SimpleOps.h
+	src/SimpleOps.cpp
+	src/Unit.h
+	src/Unit.cpp
     src/Map.h
     src/Map.cpp
     tests/test.cpp)
