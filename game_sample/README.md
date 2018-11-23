@@ -1,35 +1,23 @@
 # Sample Game
 
-I am still unsure about what to use for my [freeciv project](https://github.com/yashbonde/freeciv-python). So building a sample game in C++ and trying to wrap it with python. The idea here is that we have two files. A `map.h` file and `unit.h` file which are both wrapped in the python connected to `game.h`. But all the methods in `map.h` and `unit.h` are connected to a third file which is not connected to python.
+I am still unsure about what to use for my [freeciv project](https://github.com/yashbonde/freeciv-python). So building a sample game in C++ and trying to wrap it with python, this is a joke, this isn't even a real game, :-(. I am trying two different approaches, one using cython and the other using pybind11.
 
-The question here is can we make a simple package?
+Now you can think of cython as C/C++ for the python programmer, and pybind11 as the other way around python for C/C++ programmer. There are advantages adn disadvantages to using one over the other.
 
-The structure of the package has been refractored and now is of the conventioanla format as following:
+## Folders
 
-```
--game_sample/
-	|-README.md
-	|-CMakeLists.txt
-	|-tests/
-		|-test.cpp // this has the main() function
-	|-src/
-		|- *.h and *.cpp files
-```
+There are three different folders here and I built them in this order:
 
-## Installation and Running
+1. `completed_game`: The original code archieved to see what is happening and how it should behave. Just for redundany.
 
-To install the basic code to test if `Map.h` functionalities is working correctly run the following commands
+2. `game_pb11`: Using pybind11 and CMake to get the final `*.so` file.
 
-```bash
-$ mkdir build
-$ cd build
-$ cmake ..
-$ make
-$ ./game_sample
-```
+3. `game_cython`: Using cython
 
 ## Update Log
 `DD-MM-YYYY` format
+
+24.11.2018: The pybind11 version is still giving me issues, I still haven't figured out how to use CMake and pybind11 to combine multiple files into one executable, will come back to it later. Starting the Cython version now.
 
 23.11.2018: Completed the C++ part of the game. It now has a `Map` which is connected to `Unit` which is then connected to `SimpleOps`. We want to connect our python package to the control the `Map` and `Unit` and is not connected to the utils `SimpleOps`. The original code is archieved in `complete_game` folder and is not to be touched.
 

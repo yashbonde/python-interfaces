@@ -19,10 +19,12 @@ if(NOT pybind11_sources_POPULATED)
     )
 endif()
 
+include_directories(src)
+
 # create python module
 add_library(account
   MODULE
-    Account.cpp
+    src/Account.cpp
   )
 
 target_link_libraries(account

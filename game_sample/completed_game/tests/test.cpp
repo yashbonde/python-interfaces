@@ -55,4 +55,8 @@ int main(void){
 	    gameMap.updatePositionOfUnit(uid, teamCode);
 	}
 
+	// get the final map
+	// NOTE: it may be wrong
+	gameMap.printMap();
+
 }
